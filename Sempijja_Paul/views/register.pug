@@ -5,7 +5,7 @@ html
         link(rel='stylesheet', href='/css/style.css')
         title = "Student Registration Form"
     body
-        if(msg.length > 0)
+        if(msg)
             if(type == "err")
                 h3(style = "color:red") #{msg}
             else
@@ -33,7 +33,7 @@ html
                         label(for = "female") Female
                         input(type = "radio", name="gender", value="Female")#female
                 div.mid
-                     div.dob
+                    div.dob
                         label.dob_label(for = "dob") Date of Birth*
                         input(name = "dob", type="date").dob_input
                     div.country

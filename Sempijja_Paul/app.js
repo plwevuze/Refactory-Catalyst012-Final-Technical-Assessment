@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const { error } = require("./middleware/exceptionHandler");
+const { Register } = require("./routes/register");
 
 let upload = multer();
 let app = express();
@@ -13,6 +14,8 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(upload.array());
+
+app.use("/",Register);
 
 app.get("/register", (req,res) => {
     res.render('register')

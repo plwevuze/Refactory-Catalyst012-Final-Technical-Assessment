@@ -1,6 +1,7 @@
+require("dotenv");
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.DB_DV).then(()=>{
+mongoose.connect("mongodb://localhost/students_regestry").then(()=>{
     console.log("db connected successfully");
 }).catch(e=>{
     console.log(e);
