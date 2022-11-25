@@ -1,0 +1,51 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        link(rel='stylesheet', href='/css/style.css')
+        title = "Student Registration Form"
+    body
+        if(msg.length > 0)
+            if(type == "err")
+                h3(style = "color:red") #{msg}
+            else
+                h3(style = "color:green") #{msg}
+        form(action = '/register', method='POST').form
+            div.up
+                div.up_left
+                    div.surname
+                        label.surname_label(for = "surname") Surname*
+                        input(name = "surname", type="text").surname_input
+                    div.givenname
+                        label.surname_label(for = "givenname") Given name*
+                        input(name = "givenname", type="text").givenname_input
+                    div.title
+                        label.title_label(for = "title") Title*
+                        input(name = "title", type="text").title_input
+                div.up_right
+                    input.upload(type="file", name="photo")
+            div.down
+                div.gender_wrapper
+                    p Gender*
+                    div.gender
+                        label(for = "male") Male
+                        input(type = "radio", name="gender", value="Male")#male
+                        label(for = "female") Female
+                        input(type = "radio", name="gender", value="Female")#female
+                div.mid
+                     div.dob
+                        label.dob_label(for = "dob") Date of Birth*
+                        input(name = "dob", type="date").dob_input
+                    div.country
+                        label.surname_label(for = "country") Country*
+                        input(name = "country", type="text").country_input
+                div.por
+                    label(for = 'por').por_label Place of Residence
+                    input(name = 'por', type = 'text').por_input
+                div.nationality
+                    label(for = 'nationality').nationality_label Nationality*
+                    input(name = 'nationality', type = 'text').nationality_input
+            div.submit
+                input(type = 'submit', value='Submit').submit_btn
+
+
